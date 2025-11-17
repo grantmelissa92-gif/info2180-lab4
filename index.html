@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Avengers Characters</title>
+    </head>
+    <body>
+        <h1>Avengers Character Search</h1>
+        <button id="searchbtn">Search</button>
+        <script>
+            document.getElementById("searchbtn").addEventListener("click", function(){
+                fetch("superheroes.php")
+                .then(response => response.text())
+                .then(data =>{
+                    alert(data)
+                })
+                .catch(error => {
+                    alert(error);
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
