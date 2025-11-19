@@ -3,22 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Avengers Characters</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>Avengers Character Search</h1>
-        <button id="searchbtn">Search</button>
-        <script>
-            document.getElementById("searchbtn").addEventListener("click", function(){
-                fetch("superheroes.php")
-                .then(response => response.text())
-                .then(data =>{
-                    alert(data)
-                })
-                .catch(error => {
-                    alert(error);
-                });
-            });
-        </script>
+        <header>
+            <h1>Avengers Character Search</h1>
+        </header>
+
+        <section class="search-section">
+            <label for="herosearch">Search by Full Name or Alias</label>
+            <div class="search-bar">
+                <input type="text" id="herosearch" placeholder="e.g. Captain America or Steve Rogers">
+                <button id="searchbtn">Search</button>
+            </div>
+        </section>
+        
+        <section class="result-section">
+            <h2>Results</h2>
+            <div id="result"></div>
+        </section>
+        
+        <script src="app.js"></script>
     </body>
 </html>
 
